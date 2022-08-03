@@ -1,4 +1,6 @@
-const Productos = [
+
+'use strict';
+const Productos= [
     { nombre: "Campera", precio: 5000},
     { nombre: "Joggin", precio: 2500},
     { nombre: "Remera", precio: 1200},
@@ -8,7 +10,7 @@ const Productos = [
 
 let Carrito = []
 
-let seleccion = prompt ("Hola! ¿Desea comprar algún producto? (Si o No)").toLowerCase()
+let seleccion = prompt("Hola! ¿Desea comprar algún producto? (Si o No)").toLowerCase()
 
 while (seleccion != "si" && seleccion != "no"){
     alert ("Por favor ingresa Si o No")
@@ -58,20 +60,15 @@ default:
 }else {
     alert ("No tenemos ese producto")
 }
-  seleccion = prompt ("¿Desea seguir comprando? (Si o No").toLowerCase()
+  seleccion = prompt("¿Desea seguir comprando? (Si o No").toLowerCase()
 
   while (seleccion == "no"){
     alert ("Gracias por la compra! Hasta pronto!")
   break;
     
-  Carrito.forEach((carritoFinal) => {
-    console.log (" producto: "+ carritoFinal.producto, "unidades: " +carritoFinal.unidades, "Total a pagar por producto: " +carritoFinal.unidades * carritoFinal.precio)
-  })
-  break;
-    
 }
   }
 
-const total= Carrito.reduce((ecc, el) => acc + el.precio * el.unidades, 0)
+const total= Carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0)
 
 console.log(`El total a pagar por su compra es: ${total}`)
